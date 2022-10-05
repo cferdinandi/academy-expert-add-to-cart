@@ -24,6 +24,7 @@
 
 
 		<script type="module">
+			import {render} from 'https://cdn.jsdelivr.net/npm/reefjs@12/dist/reef.es.min.js';
 			import {getPhotos} from './components/api.js';
 
 
@@ -61,7 +62,7 @@
 
 			// Initialize
 			getPhotos().then(function (photos) {
-				app.innerHTML = photoHTML(photos);
+				render(app, photoHTML(photos));
 			});
 		</script>
 

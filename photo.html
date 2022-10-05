@@ -22,6 +22,7 @@
 
 
 		<script type="module">
+			import {render} from 'https://cdn.jsdelivr.net/npm/reefjs@12/dist/reef.es.min.js';
 			import {getPhotos} from './components/api.js';
 			import {addToCart, inCart} from './components/cart.js';
 
@@ -108,14 +109,14 @@
 				addToCart(id);
 
 				// Update the UI
-				app.innerHTML = photoHTML();
+				render(app, photoHTML());
 
 			}
 
 			// Initialize
 			getPhotos().then(function (data) {
 				photos = data;
-				app.innerHTML = photoHTML();
+				render(app, photoHTML());
 				document.addEventListener('click', clickHandler);
 			});
 		</script>
